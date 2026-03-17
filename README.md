@@ -63,11 +63,8 @@ Tested with:
 
 ## Validation
 
-Run the validation script to reproduce box and mask mAP results:
+Run the prediction notebook to reproduce box and mask mAP results:
 
-```bash
-python validate.py
-```
 
 This will:
 1. Auto-generate `crack_dataset.yaml`
