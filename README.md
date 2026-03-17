@@ -118,7 +118,7 @@ boxes = results[0].boxes    # bounding boxes
 
 ## Acknowledgements
 
-This work was supported by [**Sustainable Damage Detection and Monitoring System for Cultural Heritage using Artificial Intelligence**], funded by [**TUBITAK**], under grant number [**122Y017**].
+This work was supported by **Sustainable Damage Detection and Monitoring System for Cultural Heritage using Artificial Intelligence**, funded by **TUBITAK**, under grant number **122Y017**.
 
 ---
 
