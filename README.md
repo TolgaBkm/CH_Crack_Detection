@@ -1,4 +1,4 @@
-# CH_Crack_Detection
+# YOLO Based Crack Detection and Instance Segmentation on Cultural Heritage Structures
 
 > YOLOv8x instance segmentation model for crack detection, trained and validated on the YTU-CrackIS dataset.
 
@@ -11,7 +11,7 @@ This repository provides the code and resources to reproduce the validation resu
 - **Task:** Instance Segmentation
 - **Model:** YOLOv8x-seg
 - **Class:** `crack` (single class)
-- **Input size:** 608 × 608
+- **Input size:** 640 × 640
 - **Framework:** [Ultralytics](https://github.com/ultralytics/ultralytics)
 
 ---
@@ -26,8 +26,10 @@ The dataset is in YOLO polygon (instance segmentation) format:
 ```
 YTU-CrackIS/
 ├── images/
+│   └── train2017/
 │   └── val2017/
 └── labels/
+│   └── train2017/
     └── val2017/
 ```
 
@@ -41,7 +43,7 @@ Pre-trained model weights are available on Zenodo:
 
 Download and place the weights at:
 ```
-8x-608-l4/weights/best.pt
+weights/YOLOv8x_Crack.pt
 ```
 
 ---
@@ -93,11 +95,11 @@ Run inference on a single image:
 ```python
 from ultralytics import YOLO
 
-model = YOLO("8x-608-l4/weights/best.pt", task="segment")
+model = YOLO("weights/YOLOv8x_Crack.pt", task="segment")
 
 results = model.predict(
     source="path/to/your/image.jpg",
-    imgsz=608,
+    imgsz=640,
     conf=0.25,
     device='cpu'   # change to 0 for GPU
 )
@@ -115,28 +117,11 @@ boxes = results[0].boxes    # bounding boxes
 
 ---
 
-## Repository Structure
 
-```
-CH_Crack_Detection/
-├── 8x-608-l4/
-│   └── weights/
-│       └── best.pt          # model weights (download from Zenodo)
-├── YTU-CrackIS/             # dataset (download from Zenodo)
-│   ├── images/val2017/
-│   └── labels/val2017/
-├── validate.py              # validation script
-├── sanity_check.py          # dataset sanity check script
-├── requirements.txt         # Python dependencies
-├── LICENSE
-└── README.md
-```
-
----
 
 ## Acknowledgements
 
-This work was supported by [**PROJECT NAME**], funded by [**FUNDING BODY**], under grant number [**GRANT NUMBER**].
+This work was supported by [**Sustainable Damage Detection and Monitoring System for Cultural Heritage using Artificial Intelligence**], funded by [**TUBITAK**], under grant number [**122Y017**].
 
 ---
 
