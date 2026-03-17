@@ -29,7 +29,7 @@ YTU-CrackIS/
 │   └── train2017/
 │   └── val2017/
 └── labels/
-│   └── train2017/
+    └── train2017/
     └── val2017/
 ```
 
