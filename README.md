@@ -75,10 +75,9 @@ This will:
 
 **Expected output:**
 ```
-Box  mAP@0.5      : X.XXXX
-Box  mAP@0.5:0.95 : X.XXXX
-Mask mAP@0.5      : X.XXXX
-Mask mAP@0.5:0.95 : X.XXXX
+Box  mAP@0.5      : 60.58%
+Mask mAP@0.5      : 48.79%
+
 ```
 
 > **Note:** Validation was run on CPU (Apple M4). If you have a GPU, change `device='cpu'` to `device=0` in `validate.py` for faster inference.
